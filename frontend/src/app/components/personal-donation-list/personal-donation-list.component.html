@@ -1,0 +1,23 @@
+<h2>Listaxe das túas doacións</h2>
+
+<div class="padre-flex">
+  <div class="add-donation">
+    <img src="https://image.flaticon.com/icons/png/512/16/16057.png" alt="Simbolo de una cruz" width="25" height="25">
+    <a [routerLink]="['/donation-edit']"> Engadir unha nova doación </a>
+  </div>
+  <div class="content">
+    <wired-card>
+      <div class="tabla" *ngFor="let donation of donations">
+        <img width="40px" class="mr-2" [src]="donation.picture"/>
+        <a [routerLink]="['/donation-detail', donation._id]" style="margin-right: 0.5cm;">{{donation.name}} </a>
+        <a style="margin-right: 0.5cm; " [routerLink]="['/donation-edit', donation._id]"> <img
+            src="https://image.flaticon.com/icons/png/512/51/51648.png" width="20" height="20"></a>
+        <a style="margin-right: 0.5cm; " [routerLink]="" (click)="borrarDato(donation._id)"> <img
+            src="https://image.flaticon.com/icons/png/512/109/109602.png" width="20" height="20"> </a>
+        <wired-checkbox type="checkbox" id="cbox2" value="second_checkbox" [checked]="donation.isActive"
+          (change)="sendUpdateStatus(!donation.isActive, donation._id!)"></wired-checkbox>
+        <a style="text-align: right;">{{getReserve(donation.demandant!)}}</a>
+      </div>
+    </wired-card>
+  </div>
+</div>

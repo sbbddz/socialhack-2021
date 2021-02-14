@@ -1,0 +1,50 @@
+h3 {
+  text-align: center;
+  font-family: Gloria Hallelujah;
+  font-style: italic;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-description {
+  display: inline;
+  vertical-align: top;
+}
+
+form {
+  margin: 1cm;
+  text-align: justify;
+}
+
+.padre-flex {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.padre-flex > div {
+  font-family: Gloria Hallelujah;
+  font-style: italic;
+}
+
+p {
+  text-align: center;
+}
+
+wired-input {
+  margin-bottom: 0.25cm;
+  width: 10cm;
+  font-family: Gloria Hallelujah;
+}
+
+wired-button {
+  margin: 0.3cm;
+  background-color: black;
+  color: white;
+}

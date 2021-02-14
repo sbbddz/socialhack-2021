@@ -1,0 +1,51 @@
+<h1> Engadir ou editar unha doación </h1>
+    <wired-card class="card">
+      <form [formGroup]="form" (submit)="onSubmit(form.value)">
+        <label for="name">Nome</label>
+        <wired-input (change)="changeName(name)" type="text" name="name" #name></wired-input>
+        <br/>
+
+        <label for="img">Fotos</label>
+        <wired-input type="file" name="img" #img placeholder="Producto" ></wired-input>
+        <br />
+
+        <label  class="card-description" for="description">Descrición</label>
+        <wired-textarea (change)="changeDescription(description)" type="text-area" name="description" #description rows="3" maxlength="38"></wired-textarea>
+        <br />
+
+        <label class="mt-3" for="type">Tipo de produto</label>
+       <wired-combo (selected)="changeType(type)" selected="Ropa" type="select" name="type" #type >
+          <wired-item value="Ropa" role="option" class="wired-rendered">Roupa</wired-item>
+          <wired-item value="Alimentos" role="option" class="wired-rendered">Alimentos</wired-item>
+          <wired-item value="Juguetes" role="option" class="wired-rendered">Xoguetes</wired-item>
+        </wired-combo>
+        <br />
+        <label  for="expirationDate">Data de caducidade</label>
+        <wired-input (change)="changeExpirationDate(expirationDate)" type="date" name="expirationDate" #expirationDate ></wired-input>
+        <br />
+        <label for="address">Dirección</label>
+        <wired-input (change)="changeAddress(name)" type="text" name="address" #address ></wired-input>
+        <br />
+
+        <label for="switch">Visible para o 3er sector</label>&nbsp;&nbsp;&nbsp;
+        <wired-toggle (change)="changeFor3Sector($event, for3Sector) " #for3Sector></wired-toggle>
+        <br />
+        <label for="switch">Visible para o público xeral</label>&nbsp;&nbsp;&nbsp;
+        <wired-toggle (change)="changeForPublic($event, forPublic) " #forPublic></wired-toggle>
+        <br />
+
+        <label for="switch">Activado</label>&nbsp;&nbsp;&nbsp;
+        <wired-toggle (change)="changeIsActive($event, isActive) " #isActive></wired-toggle>
+        <br />
+        <p>
+          <span *ngIf="id!==undefined">
+            <wired-button (click)="onSubmit(form.value)" type="submit" [disabled]="form.invalid">Actualizar </wired-button>
+          </span>
+          <span *ngIf="id===undefined">
+            <wired-button (click)="onSubmit(form.value)" type="submit" [disabled]="form.invalid">Xerar </wired-button>
+          </span>
+
+          &nbsp; <wired-button (click)="cancelar()" type="submit">Cancelar</wired-button>
+        </p>
+      </form>
+    </wired-card>

@@ -1,0 +1,27 @@
+h2 {
+    text-align: center;
+    margin-top: 1.5cm;
+    margin-bottom: 0.5cm;
+}
+
+.add-donation {
+    text-align: right;
+    margin: 10px;
+}
+
+.padre-flex {
+    height: 100vh;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.padre-flex > div {
+    text-align: center;
+    font-family: Gloria Hallelujah;
+    font-style: italic;
+}
+
+.tabla {
+    margin: 0.5cm;
+}

@@ -1,0 +1,25 @@
+<div class="padre-flex">
+  <div class="content">
+    <wired-card>
+      <form [formGroup]="form" (submit)="onSubmit(form.value)">
+        <div class="inputs">
+          <h3>{{getMode()}}</h3>
+          <wired-input type="text" (blur)="changeName(name)" #name name="name" autocomplete="off" placeholder="Nombre"></wired-input>
+          <br />
+
+          <wired-input type="text" (blur)="changeEmail(email)" #email name="email" autocomplete="off" placeholder="Email"></wired-input>
+          <br />
+          <span *ngIf="is3sector"><b>Este usuario pertence ao Terceiro Sector!</b></span><br>
+          <wired-input type="password" (bluer)="changePassword(password)" #password name="password" autocomplete="off" placeholder="Contraseña"></wired-input>
+          <br />
+          <wired-input type="password" (blur)="changePassword2(passwordcheck)" #passwordcheck name="password-check" autocomplete="off" placeholder="Repite Contraseña"></wired-input>
+          <br />
+          <wired-input type="text" (blur)="changeAddress(address)" [value]="theAddress" #address name="address" autocomplete="off" placeholder="Dirección"></wired-input>
+          <br />
+          <wired-button (click)="onSubmit(form.value)" type="submit" [disabled]="form.invalid">Rexistrarse
+          </wired-button>
+        </div>
+      </form>
+    </wired-card>
+  </div>
+</div>

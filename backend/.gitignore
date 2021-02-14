@@ -1,0 +1,9 @@
+/node_modules
+/public/uploads/*
+
+npm-debug.log
+.DS_Store
+.env
+readmeNuestro.md
+package-lock.json
+.vsls.json

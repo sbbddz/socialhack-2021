@@ -1,0 +1,13 @@
+<div class="navbar">
+      <a class="logo">Dóalo Ti!</a>
+      <ul class="navbar-list">
+            <li><a *ngIf="isAdminRol()" [routerLink]="['user-list']">Usuarios</a></li>
+            <li><a *ngIf="!isNotLogued()" [routerLink]="['donation-list']">Doacións activas</a></li>
+            <li><a *ngIf="isAdminRol() || is3SectorRol()" [routerLink]="['user/donation']">As túas doacións</a></li>
+            <li><a *ngIf="isNotLogued()" [routerLink]="['login']">Login</a></li>
+            <li><a *ngIf="isNotLogued()" [routerLink]="['user-edit']">Rexistrarse</a></li>
+            <li><span *ngIf="!isNotLogued()" class="navbar-login">Benvido@: {{getLoguedEmail()}}</span></li>
+            <li><a *ngIf="!isNotLogued() " [routerLink]="" (click)="logout()">(Logout)</a></li>
+      </ul>
+      <wired-divider style="width:100%"></wired-divider>
+</div>

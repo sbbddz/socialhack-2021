@@ -1,0 +1,22 @@
+<div class="padre-flex">
+  <div class="content">
+
+    <wired-card>
+      <form [formGroup]="form" (submit)="onSubmit(form.value)">
+
+        <div class="inputs">
+          <h3>Login</h3>
+          <p>
+            <wired-input type="text" (blur)="changeEmail(email)" #email name="email" placeholder="email"></wired-input>
+          </p>
+          <p>
+            <wired-input type="password" (blur)="changePassword(password)" #password name="password" placeholder="Password">
+            </wired-input>
+          </p>
+          <wired-button (click)="onSubmit(form.value)" type="submit" [disabled]="form.invalid">Acceder</wired-button>
+        </div>
+      </form>
+    </wired-card>
+
+  </div>
+</div>

@@ -1,0 +1,18 @@
+  <h3>Reservar doación: "{{donation.name}}"</h3>
+<a class="a1">Nome:</a> <a class="a2"> {{getName()}}</a>
+
+<a class="a3"> Email: </a><a class="a5">{{getEmail()}}</a>
+
+<div *ngIf="isReserveForMe()">
+  Xa está reservada por min
+  <wired-button ><a (click)="deReservar()">Anular reserva</a></wired-button>
+</div>
+<div *ngIf="alredyReserve() && !isReserveForMe()">
+  Xa está reservada por outra persoa
+</div>
+<div *ngIf="!alredyReserve()">
+  Non está reservada por ninguén
+  <br/>
+  <wired-textarea type="text" placeholder="Escribe un mensaje" [(ngModel)]="demandantMessage"></wired-textarea>
+  <wired-button ><a (click)="reserve()">Reservar</a></wired-button>
+</div>

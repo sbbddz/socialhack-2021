@@ -1,0 +1,15 @@
+.card-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card-image{
+float: right;
+}
+
+.card-link{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}

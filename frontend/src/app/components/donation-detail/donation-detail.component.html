@@ -1,0 +1,38 @@
+
+<h2>Detalles de la donación</h2>
+<span *ngIf="donation$ | async as donation">
+
+  <div class="content">
+
+  <div class="padre-flex">
+
+
+        <a class="a1">Id:</a> <a class="a11"> {{donation._id}}</a> 
+        <wired-image class="card-image" style="width:120px" [src]="donation.picture"></wired-image>
+        <br />
+        <a class="a1"> Nome:</a> <a  class="a2">{{donation.name}}</a>
+        <br />
+        <a class="a1">Descrición:</a><a  class="a2">{{donation.description}}</a>
+        <br />
+        <a class="a1">Tipo:</a> <a class="a4">{{donation.type}}</a> &nbsp;&nbsp;&nbsp;
+        <a class="a3"> Data de caducidade:</a>
+        <a  class="a6">{{donation.expirationDate | date:'dd/MM/YYYY hh:mm'}}</a>
+        <br />
+        <a class="a1">Visible para o 3er Sector</a><wired-checkbox type="checkbox" id="cbox2" value="second_checkbox" [checked]="donation.for3Sector" disabled
+        class="a7"></wired-checkbox>
+        &nbsp;&nbsp;&nbsp;
+        <a class="a3">Visible para o público xeral</a><wired-checkbox  type="checkbox" id="cbox2" value="second_checkbox" [checked]="donation.forPublic" disabled
+        class="a5"></wired-checkbox>
+        <br />
+        <a class="a1">Activo:</a> <wired-checkbox type="checkbox" id="cbox2" value="second_checkbox" [checked]="donation.isActive" disabled></wired-checkbox>
+        &nbsp;&nbsp;&nbsp;
+        <a class="a3"> Empresa Doante:</a><a  class="a6">patata</a>
+        <br />
+        <a class="a1"> Dirección:</a> <a  class="a2">{{donation.address}}</a>
+        <br />
+
+  </div>
+
+
+    <app-donation-reserve [donation]="donation"></app-donation-reserve>
+  </div>  

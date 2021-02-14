@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Listaxe de usuario</h1>
+  <ng-container *ngIf="users; else loading">
+    <div class="add-user">
+      <img src="https://image.flaticon.com/icons/png/512/16/16057.png" alt="Simbolo de una cruz" width="25" height="25">
+      <a [routerLink]="['/user-edit']"> Crear novo usuario </a>
+    </div>
+    <div *ngIf="!users">Non hai usuarios</div>
+
+    <div *ngFor="let user of users">
+      <img width="30px" [src]="user.imageUrl">
+      {{user.name}} |
+      {{user.email}} |
+      {{user.address}} |
+      {{user.rol}} |
+      {{user.createdAt | date:'dd/MM/YYYY hh:mm'}}
+
+      <a [routerLink]="['/user-edit', user._id]"> Editar </a>
+      <a [routerLink]="" (click)="borrarDato(user._id!)"> Borrar </a>
+    </div>
+  </ng-container>
+  <ng-template #loading>Cargando...</ng-template>
+</div>

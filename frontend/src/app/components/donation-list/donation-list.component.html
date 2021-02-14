@@ -1,0 +1,23 @@
+<h1>Lista de doaciones activas</h1>
+
+<wired-card class="wired-rendered">
+  Filtrar por nome: <wired-search-input (change)="filtrar(search)" #search placeholder="busqueda"></wired-search-input>
+</wired-card>
+
+
+<div class="card-grid">
+
+<span style="display: grid;" *ngFor="let donation of donations">
+  <wired-card class="wired-rendered">
+    <wired-image class="card-image" style="width:120px" [src]="donation.picture"></wired-image>
+  <h2>{{donation.name}} </h2>
+  <p>{{donation.description}}</p>
+  Tipo: {{donation.type}} <br/>
+  Data de expiración: {{donation.expirationDate | date:'dd/MM/YYYY hh:mm'}} <br/>
+
+  <br>
+  <a class="card-link"  [routerLink]="['/donation-detail', donation._id]"> Ver detalles </a>
+</wired-card>
+
+</span>
+</div>
